@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/martinique"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="100dp">
+
+        <RelativeLayout
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginHorizontal="20dp"
+            android:background="@drawable/rounded_square_stroke">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/player1_name"
+                android:layout_alignParentTop="true"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="20dp"
+                android:text="Player 1"
+                android:textColor="@color/sidecar"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/player_1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentStart="false"
+                android:layout_alignParentLeft="false"
+                android:layout_alignParentTop="false"
+                android:layout_alignParentEnd="false"
+                android:layout_alignParentRight="false"
+                android:layout_alignParentBottom="true"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="40dp"
+                app:srcCompat="@drawable/cross" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_alignParentRight="true"
+
+            android:layout_marginHorizontal="20dp"
+            android:background="@drawable/rounded_square_stroke">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="20dp"
+                android:text="Player 2"
+                android:textColor="@color/biloba_flower"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentStart="false"
+                android:layout_alignParentLeft="false"
+                android:layout_alignParentTop="false"
+                android:layout_alignParentEnd="false"
+                android:layout_alignParentRight="false"
+                android:layout_alignParentBottom="true"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="40dp"
+                app:srcCompat="@drawable/circle" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/rounded_square"
+        android:backgroundTint="@color/viking"
+        android:padding="10dp">
+
+        <RelativeLayout
+            android:id="@+id/top_left_square"
+            android:layout_width="100dp"
+
+            android:layout_height="100dp"
+            android:background="@drawable/rounded_square"
+            android:foregroundGravity="clip_horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/cross" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/top_center_square"
+            android:layout_width="100dp"
+
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/rounded_square">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:background="@drawable/circle" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/top_right_square"
+            android:layout_width="100dp"
+
+            android:layout_height="100dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/rounded_square">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/cross" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/center_left_square"
+            android:layout_width="100dp"
+
+            android:layout_height="100dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/rounded_square">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/cross" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/center_right_square"
+            android:layout_width="100dp"
+
+            android:layout_height="100dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/rounded_square">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/cross" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/bottom_left_square"
+            android:layout_width="100dp"
+
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/rounded_square">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/cross" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/bottom_center_square"
+            android:layout_width="100dp"
+
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/rounded_square">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/cross" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/bottom_right_square"
+            android:layout_width="100dp"
+
+            android:layout_height="100dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/rounded_square">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/cross" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/center_square"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/rounded_square">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/cross" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
+</layout>
