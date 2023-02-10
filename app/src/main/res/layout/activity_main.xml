@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="100dp">
+        android:layout_marginTop="30dp">
 
         <RelativeLayout
             android:layout_width="150dp"
@@ -23,29 +23,25 @@
 
             <TextView
                 android:id="@+id/player1_name"
+                style="@style/players_names"
                 android:text="@string/first_player"
-                android:textColor="@color/sidecar"
-                style="@style/players_names" />
+                android:textColor="@color/sidecar" />
 
             <ImageView
                 android:id="@+id/player1_cross"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_alignParentStart="false"
-                android:layout_alignParentLeft="false"
-                android:layout_alignParentTop="false"
-                android:layout_alignParentEnd="false"
-                android:layout_alignParentRight="false"
                 android:layout_alignParentBottom="true"
                 android:layout_centerInParent="true"
                 android:layout_marginBottom="40dp"
+                android:contentDescription="@string/cross_image_description"
                 app:srcCompat="@drawable/cross" />
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
 
             android:layout_marginHorizontal="20dp"
             android:background="@drawable/rounded_square_stroke">
@@ -66,14 +62,10 @@
                 android:id="@+id/player2_circle"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_alignParentStart="false"
-                android:layout_alignParentLeft="false"
-                android:layout_alignParentTop="false"
-                android:layout_alignParentEnd="false"
-                android:layout_alignParentRight="false"
                 android:layout_alignParentBottom="true"
                 android:layout_centerInParent="true"
                 android:layout_marginBottom="40dp"
+                android:contentDescription="@string/circle_image_description"
                 app:srcCompat="@drawable/circle" />
         </RelativeLayout>
     </RelativeLayout>
@@ -91,127 +83,115 @@
 
         <RelativeLayout
             android:id="@+id/top_left_square"
-            android:layout_width="100dp"
 
-            android:layout_height="100dp"
-            android:background="@drawable/rounded_square"
-            >
+            style="@style/box_style">
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/cross" />
+            <ImageView
+                android:id="@+id/top_left_square_image"
+                style="@style/cross_circle_images"
+                android:contentDescription="@string/top_left_image_description" />
         </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/top_center_square"
-            android:layout_width="100dp"
 
-            android:layout_height="100dp"
             android:layout_centerHorizontal="true"
-            android:background="@drawable/rounded_square">
+            style="@style/box_style">
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="5dp"
-                android:background="@drawable/circle" />
+            <ImageView
+                android:id="@+id/top_center_square_image"
+                style="@style/cross_circle_images"
+                android:contentDescription="@string/top_center_image_description" />
         </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/top_right_square"
-            android:layout_width="100dp"
 
-            android:layout_height="100dp"
-            android:layout_alignParentRight="true"
-            android:background="@drawable/rounded_square">
+            android:layout_alignParentEnd="true"
+            style="@style/box_style">
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/cross" />
+            <ImageView
+                android:id="@+id/top_right_square_image"
+                style="@style/cross_circle_images"
+                android:contentDescription="@string/top_right_image_description" />
         </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/center_left_square"
-            android:layout_width="100dp"
 
-            android:layout_height="100dp"
             android:layout_centerVertical="true"
-            android:background="@drawable/rounded_square">
+            style="@style/box_style">
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/cross" />
+            <ImageView
+                android:id="@+id/center_left_square_image"
+                style="@style/cross_circle_images"
+                android:contentDescription="@string/center_left_image_description" />
         </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/center_right_square"
-            android:layout_width="100dp"
 
-            android:layout_height="100dp"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:background="@drawable/rounded_square">
+            style="@style/box_style">
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/cross" />
+            <ImageView
+                android:id="@+id/center_right_square_image"
+                style="@style/cross_circle_images"
+                android:contentDescription="@string/center_right_image_description" />
         </RelativeLayout>
 
 
         <RelativeLayout
             android:id="@+id/bottom_left_square"
-            android:layout_width="100dp"
 
-            android:layout_height="100dp"
             android:layout_alignParentBottom="true"
-            android:background="@drawable/rounded_square">
+            style="@style/box_style">
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/cross" />
+            <ImageView
+                android:id="@+id/bottom_left_square_image"
+                style="@style/cross_circle_images"
+                android:contentDescription="@string/bottom_left_image_description" />
         </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/bottom_center_square"
-            android:layout_width="100dp"
 
-            android:layout_height="100dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:background="@drawable/rounded_square">
+            style="@style/box_style">
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/cross" />
+            <ImageView
+                android:id="@+id/bottom_center_square_image"
+                style="@style/cross_circle_images"
+                android:contentDescription="@string/bottom_center_image_description" />
         </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/bottom_right_square"
-            android:layout_width="100dp"
 
-            android:layout_height="100dp"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:background="@drawable/rounded_square">
+            style="@style/box_style">
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/cross" />
+
+            <ImageView
+                android:id="@+id/bottom_right_square_image"
+                style="@style/cross_circle_images"
+                android:contentDescription="@string/bottom_right_image_description" />
+
         </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/center_square"
             style="@style/boxes">
 
-            <ImageView style="@style/cross_circle_images" />
+            <ImageView
+                android:id="@+id/center_square_image"
+                style="@style/cross_circle_images"
+                android:contentDescription="@string/center_image_description" />
         </RelativeLayout>
+
     </RelativeLayout>
 
 </RelativeLayout>

@@ -2,4 +2,15 @@
     <string name="app_name">TicTacToe</string>
     <string name="first_player">Player 1</string>
     <string name="second_player">Player 2</string>
+    <string name="cross_image_description">Cross image</string>
+    <string name="circle_image_description">Circle image</string>
+    <string name="bottom_center_image_description">Bottom center image</string>
+    <string name="bottom_right_image_description">Bottom right image</string>
+    <string name="center_image_description">Center image</string>
+    <string name="bottom_left_image_description">Bottom left</string>
+    <string name="center_right_image_description">Center right image</string>
+    <string name="center_left_image_description">Center left image</string>
+    <string name="top_right_image_description">Top right image</string>
+    <string name="top_center_image_description">Top center image</string>
+    <string name="top_left_image_description">Top left image</string>
 </resources>

@@ -5,6 +5,8 @@ import androidx.databinding.DataBindingUtil;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.sb.tictactoe.databinding.ActivityMainBinding;
@@ -19,7 +21,10 @@ public class MainActivity extends AppCompatActivity {
 
         getIntent().getStringExtra("name");
         binding.player1Name.setText(getIntent().getStringExtra("name"));
+        binding.centerSquare.setOnClickListener(view -> setImage(binding.centerSquareImage));
     }
-
+    public void setImage(ImageView imageView){
+        imageView.setImageResource(R.drawable.circle);
+    }
 
 }
