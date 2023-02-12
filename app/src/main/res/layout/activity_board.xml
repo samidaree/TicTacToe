@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -21,8 +20,7 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_marginHorizontal="20dp"
-            android:background="@drawable/rounded_square_green_border"
-            >
+            android:background="@drawable/rounded_square_green_border">
 
             <TextView
                 android:id="@+id/player1_name"
@@ -45,10 +43,9 @@
             android:id="@+id/player2_layout"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:background="@drawable/rounded_square_white_border"
             android:layout_alignParentEnd="true"
             android:layout_marginHorizontal="20dp"
-            >
+            android:background="@drawable/rounded_square_white_border">
 
             <TextView
                 android:id="@+id/player2_name"
@@ -78,9 +75,8 @@
         android:id="@+id/board"
         android:layout_width="350dp"
         android:layout_height="350dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="80dp"
+        android:layout_centerInParent="true"
+        android:layout_above="@id/spacer"
         android:background="@drawable/rounded_square"
         android:backgroundTint="@color/viking"
         android:padding="10dp">
@@ -99,8 +95,8 @@
         <RelativeLayout
             android:id="@+id/top_center_square"
 
-            android:layout_centerHorizontal="true"
-            style="@style/box_style">
+            style="@style/box_style"
+            android:layout_centerHorizontal="true">
 
             <ImageView
                 android:id="@+id/top_center_square_image"
@@ -111,8 +107,8 @@
         <RelativeLayout
             android:id="@+id/top_right_square"
 
-            android:layout_alignParentEnd="true"
-            style="@style/box_style">
+            style="@style/box_style"
+            android:layout_alignParentEnd="true">
 
             <ImageView
                 android:id="@+id/top_right_square_image"
@@ -123,8 +119,8 @@
         <RelativeLayout
             android:id="@+id/center_left_square"
 
-            android:layout_centerVertical="true"
-            style="@style/box_style">
+            style="@style/box_style"
+            android:layout_centerVertical="true">
 
             <ImageView
                 android:id="@+id/center_left_square_image"
@@ -135,9 +131,9 @@
         <RelativeLayout
             android:id="@+id/center_right_square"
 
+            style="@style/box_style"
             android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            style="@style/box_style">
+            android:layout_centerVertical="true">
 
             <ImageView
                 android:id="@+id/center_right_square_image"
@@ -149,8 +145,8 @@
         <RelativeLayout
             android:id="@+id/bottom_left_square"
 
-            android:layout_alignParentBottom="true"
-            style="@style/box_style">
+            style="@style/box_style"
+            android:layout_alignParentBottom="true">
 
             <ImageView
                 android:id="@+id/bottom_left_square_image"
@@ -161,9 +157,9 @@
         <RelativeLayout
             android:id="@+id/bottom_center_square"
 
+            style="@style/box_style"
             android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            style="@style/box_style">
+            android:layout_centerHorizontal="true">
 
             <ImageView
                 android:id="@+id/bottom_center_square_image"
@@ -174,9 +170,9 @@
         <RelativeLayout
             android:id="@+id/bottom_right_square"
 
+            style="@style/box_style"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            style="@style/box_style">
+            android:layout_alignParentBottom="true">
 
 
             <ImageView
@@ -197,5 +193,14 @@
         </RelativeLayout>
 
     </RelativeLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Surrender"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="40dp">
+
+    </Button>
 
 </RelativeLayout>
