@@ -76,7 +76,6 @@
         android:layout_width="350dp"
         android:layout_height="350dp"
         android:layout_centerInParent="true"
-        android:layout_above="@id/spacer"
         android:background="@drawable/rounded_square"
         android:backgroundTint="@color/viking"
         android:padding="10dp">
@@ -194,13 +193,20 @@
 
     </RelativeLayout>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Surrender"
         android:layout_alignParentBottom="true"
-        android:layout_margin="40dp">
+        android:layout_marginStart="50dp"
+        android:layout_marginBottom="60dp"
+        android:text="Surrender"
+        android:textStyle="bold"
+        android:textSize="16dp"
+        android:padding="10dp"
+        android:background="@drawable/oval_purple_button"
+        android:textColor="@color/martinique"
+        >
 
-    </Button>
+    </androidx.appcompat.widget.AppCompatButton>
 
 </RelativeLayout>
