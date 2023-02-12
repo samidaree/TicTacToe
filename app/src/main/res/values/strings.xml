@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">TicTacToe</string>
-    <string name="first_player">Player 1</string>
-    <string name="second_player">Player 2</string>
+    <string name="first_player">Player</string>
+    <string name="second_player">Bot</string>
     <string name="cross_image_description">Cross image</string>
     <string name="circle_image_description">Circle image</string>
     <string name="bottom_center_image_description">Bottom center image</string>

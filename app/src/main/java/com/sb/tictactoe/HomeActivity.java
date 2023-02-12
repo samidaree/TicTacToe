@@ -5,20 +5,18 @@ import androidx.databinding.DataBindingUtil;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
 
-import com.sb.tictactoe.databinding.ActivityMain2Binding;
-import com.sb.tictactoe.databinding.ActivityMainBinding;
+import com.sb.tictactoe.databinding.ActivityHomeBinding;
 
-public class MainActivity2 extends AppCompatActivity {
-    private ActivityMain2Binding binding;
+public class HomeActivity extends AppCompatActivity {
+    private ActivityHomeBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
-        binding = DataBindingUtil.setContentView(MainActivity2.this, R.layout.activity_main2) ;
+        setContentView(R.layout.activity_home);
+        binding = DataBindingUtil.setContentView(HomeActivity.this, R.layout.activity_home) ;
         binding.buttonStart.setOnClickListener(view -> {
-            Intent intent = new Intent(MainActivity2.this,MainActivity.class);
+            Intent intent = new Intent(HomeActivity.this,BoardActivity.class);
             intent.putExtra("checkedButton",binding.radioGroup.getCheckedRadioButtonId());
             intent.putExtra("name", binding.editTextTextPersonName.getText().toString().trim());
             startActivity(intent);
