@@ -5,7 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="null"
     tools:context=".ResultDialog">
     <LinearLayout
         android:layout_width="match_parent"
@@ -31,10 +30,10 @@
             android:id="@+id/startAgainButton"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="@color/viking"
             android:text="Start Again"
             android:layout_margin="20dp"
-            android:textColor="@color/viking"
+            android:textColor="@color/white"
             app:cornerRadius = "20dp"/>
     </LinearLayout>
 </RelativeLayout>

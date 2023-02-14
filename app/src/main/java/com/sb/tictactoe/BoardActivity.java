@@ -3,6 +3,7 @@ package com.sb.tictactoe;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -16,6 +17,7 @@ public class BoardActivity extends AppCompatActivity {
     private static final int[] idArray = {R.id.top_left_square_image, R.id.top_center_square_image, R.id.top_right_square_image,  R.id.center_left_square_image, R.id.center_square_image, R.id.center_right_square_image,  R.id.bottom_left_square_image, R.id.bottom_center_square_image, R.id.bottom_right_square_image} ;
     private final ImageView[]boxes = new ImageView[idArray.length];
 
+    private double bestScore = Double.NEGATIVE_INFINITY;
     private final List<int[]> combinationList = new ArrayList<>();
     private int[]boxPositions = {0,0,0,0,0,0,0,0,0};
     private int playerTurn = 1 ;
@@ -27,6 +29,8 @@ public class BoardActivity extends AppCompatActivity {
         binding = ActivityBoardBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        int difficulty = getIntent().getIntExtra("checkedButton", 0);
+        Log.d("Difficulty : ", ""+difficulty);
         String playerOneName = getIntent().getStringExtra("name");
         if (playerOneName!=null && !playerOneName.isEmpty())
             binding.player1Name.setText(playerOneName);
@@ -48,8 +52,19 @@ public class BoardActivity extends AppCompatActivity {
             boxes[i].setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View view){
-                    if (isBoxSelectable(finalI))
-                        performAction((ImageView) view, finalI);
+                    if (isBoxSelectable(finalI)){
+                        if (difficulty==2131231083){
+                            if (playerTurn==1){
+                                performAction((ImageView) view, finalI);
+                            }
+                            if (totalSelectedBoxes<9 && !checkResults())
+                                bestMove();
+                        }
+
+                        else {
+                            performAction((ImageView) view, finalI);
+                            }
+                    }
                 }
             });
         }
@@ -58,7 +73,6 @@ public class BoardActivity extends AppCompatActivity {
     private void performAction (ImageView imageView, int selectedBoxPosition){
         boxPositions[selectedBoxPosition] = playerTurn ;
         if (playerTurn ==1){
-            boxPositions[selectedBoxPosition] = 1;
             imageView.setImageResource(R.drawable.cross);
             if (checkResults()){
                 ResultDialog resultDialog = new ResultDialog(BoardActivity.this , binding.player1Name.getText().toString() + " is a Winner ! ", BoardActivity.this);
@@ -76,11 +90,11 @@ public class BoardActivity extends AppCompatActivity {
             }
         }
         else {
-            boxPositions[selectedBoxPosition] = 2 ;
             imageView.setImageResource(R.drawable.circle);
             if (checkResults()){
                 ResultDialog resultDialog = new ResultDialog(BoardActivity.this , binding.player2Name.getText().toString() + " is a Winner ! ", BoardActivity.this);
                 resultDialog.setCancelable(false) ;
+                resultDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
                 resultDialog.show();
             }
             else if (totalSelectedBoxes == 9){
@@ -95,7 +109,41 @@ public class BoardActivity extends AppCompatActivity {
         }
     }
 
-    private void changePlayerTurn(int currentPlayerTurn){
+    private void bestMove(){
+        int bestSpot = 0;
+        int score ;
+
+        for (int i = 0; i<boxPositions.length; i ++){
+            // The spot is available
+            if (isBoxSelectable(i) && (score=minmax()) >= bestScore){
+                    bestScore = score;
+                    bestSpot = i ;
+            }
+        }
+        boxPositions[bestSpot] = 2 ;
+        boxes[bestSpot].setImageResource(R.drawable.circle);
+        if (checkResults()){
+            ResultDialog resultDialog = new ResultDialog(BoardActivity.this , binding.player2Name.getText().toString() + " is a Winner ! ", BoardActivity.this);
+            resultDialog.setCancelable(false) ;
+            resultDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+            resultDialog.show();
+        }
+        else if (totalSelectedBoxes == 9){
+            ResultDialog resultDialog = new ResultDialog(BoardActivity.this, "Match Draw", BoardActivity.this);
+            resultDialog.setCancelable(false) ;
+            resultDialog.show();
+        }
+        else {
+            changePlayerTurn(1)  ;
+            totalSelectedBoxes++ ;
+
+        }
+    }
+
+    private int minmax(){
+        return 1;
+    }
+    protected void changePlayerTurn(int currentPlayerTurn){
         playerTurn = currentPlayerTurn ;
         if (playerTurn == 1){
             binding.player1Layout.setBackgroundResource(R.drawable.rounded_square_green_border);
@@ -107,7 +155,7 @@ public class BoardActivity extends AppCompatActivity {
         }
     }
 
-    private boolean checkResults(){
+    protected boolean checkResults(){
         boolean response = false;
         for (int i = 0; i<combinationList.size() && !response; i++){
             final int[]combination = combinationList.get(i);
@@ -119,7 +167,7 @@ public class BoardActivity extends AppCompatActivity {
         return response ;
     }
 
-    private boolean isBoxSelectable(int boxPosition){
+    protected boolean isBoxSelectable(int boxPosition){
         return boxPositions[boxPosition] == 0;
     }
 
@@ -130,7 +178,25 @@ public class BoardActivity extends AppCompatActivity {
         for (int i = 0; i<idArray.length; i++){
             boxes[i].setImageDrawable(null);
         }
+        binding.player2Layout.setBackgroundResource(R.drawable.rounded_square_white_border);
+        binding.player1Layout.setBackgroundResource(R.drawable.rounded_square_green_border);
 
+    }
+
+    protected int getPlayerTurn(){
+        return playerTurn;
+    }
+
+    protected void setBoxPositions(int i, int value){
+        this.boxPositions[i] = value;
+    }
+
+    protected int getTotalSelectedBoxes(){
+        return this.totalSelectedBoxes ;
+    }
+
+    protected int[]getBoxPositions(){
+        return this.boxPositions;
     }
 
 

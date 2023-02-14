@@ -3,9 +3,11 @@ package com.sb.tictactoe;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -15,6 +17,8 @@ public class ResultDialog extends Dialog {
     private final BoardActivity mainActivity;
     public ResultDialog(@NonNull Context context, String message, BoardActivity mainActivity) {
         super(context);
+        this.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+        this.getWindow().getAttributes().windowAnimations = R.style.dialog_animation;
         this.message = message;
         this.mainActivity = mainActivity;
     }
