@@ -23,18 +23,16 @@ public class BoardActivity extends AppCompatActivity {
     private int playerTurn = 1 ;
     private int totalSelectedBoxes = 1;
 
+    private HardLevelAI ai = new HardLevelAI(this);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityBoardBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        int difficulty = getIntent().getIntExtra("checkedButton", 0);
-        Log.d("Difficulty : ", ""+difficulty);
-        String playerOneName = getIntent().getStringExtra("name");
-        if (playerOneName!=null && !playerOneName.isEmpty())
-            binding.player1Name.setText(playerOneName);
-
+        String mode = getIntent().getStringExtra("clickedButton");
+        System.out.println("mode : " + mode);
 
         combinationList.add(new int[] {0,1,2});
         combinationList.add(new int[] {3,4,5});
@@ -53,7 +51,7 @@ public class BoardActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view){
                     if (isBoxSelectable(finalI)){
-                        if (difficulty==2131231083){
+                        if (mode.equalsIgnoreCase("Computer")){
                             if (playerTurn==1){
                                 performAction((ImageView) view, finalI);
                             }
@@ -110,16 +108,8 @@ public class BoardActivity extends AppCompatActivity {
     }
 
     private void bestMove(){
-        int bestSpot = 0;
-        int score ;
+        int bestSpot = ai.move();
 
-        for (int i = 0; i<boxPositions.length; i ++){
-            // The spot is available
-            if (isBoxSelectable(i) && (score=minmax()) >= bestScore){
-                    bestScore = score;
-                    bestSpot = i ;
-            }
-        }
         boxPositions[bestSpot] = 2 ;
         boxes[bestSpot].setImageResource(R.drawable.circle);
         if (checkResults()){
@@ -140,9 +130,6 @@ public class BoardActivity extends AppCompatActivity {
         }
     }
 
-    private int minmax(){
-        return 1;
-    }
     protected void changePlayerTurn(int currentPlayerTurn){
         playerTurn = currentPlayerTurn ;
         if (playerTurn == 1){

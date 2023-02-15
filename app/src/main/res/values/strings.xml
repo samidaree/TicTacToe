@@ -13,4 +13,7 @@
     <string name="top_right_image_description">Top right image</string>
     <string name="top_center_image_description">Top center image</string>
     <string name="top_left_image_description">Top left image</string>
+    <string name="computer_home_button">Play against computer</string>
+    <string name="multiplayer_home_button" >Two players</string>
+    <string name="title">TIC TAC TOE</string>
 </resources>

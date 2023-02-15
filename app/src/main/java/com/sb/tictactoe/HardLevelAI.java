@@ -10,7 +10,7 @@ public class HardLevelAI extends AIPlayers{
 
     @Override
     protected int move(){
-        int []result = minimax(8, 2);
+        int []result = minimax(2, 2);
         return result[1] ;
     }
 
@@ -27,6 +27,7 @@ public class HardLevelAI extends AIPlayers{
 
         else {
             for (Integer i : moves){
+                System.out.println("for loop : " + i );
                 board.setBoxPositions(i,playerTurn);
                 if (playerTurn==2){
                     currentScore=minimax(depth-1, 1)[0];

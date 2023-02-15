@@ -5,12 +5,15 @@
       <map>
         <entry key="app/src/main/res/drawable/circle.xml" value="0.265" />
         <entry key="app/src/main/res/drawable/oval_cutton.xml" value="0.1585" />
+        <entry key="app/src/main/res/drawable/oval_home.xml" value="0.242" />
+        <entry key="app/src/main/res/drawable/oval_purple_button.xml" value="0.3015" />
+        <entry key="app/src/main/res/drawable/oval_yellow_button.xml" value="0.3015" />
         <entry key="app/src/main/res/drawable/rounded_square.xml" value="0.265" />
         <entry key="app/src/main/res/drawable/rounded_square_green_border.xml" value="0.22" />
         <entry key="app/src/main/res/drawable/rounded_square_stroke.xml" value="0.265" />
         <entry key="app/src/main/res/drawable/rounded_square_white_border.xml" value="0.134" />
         <entry key="app/src/main/res/layout/activity_board.xml" value="0.24454895254382214" />
-        <entry key="app/src/main/res/layout/activity_home.xml" value="0.24454895254382214" />
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main2.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main3.xml" value="0.24454895254382214" />

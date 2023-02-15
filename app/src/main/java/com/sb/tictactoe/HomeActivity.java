@@ -15,10 +15,14 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         binding = DataBindingUtil.setContentView(HomeActivity.this, R.layout.activity_home) ;
-        binding.buttonStart.setOnClickListener(view -> {
+        binding.computerButton.setOnClickListener(view -> {
             Intent intent = new Intent(HomeActivity.this,BoardActivity.class);
-            intent.putExtra("checkedButton",binding.radioGroup.getCheckedRadioButtonId());
-            intent.putExtra("name", binding.editTextTextPersonName.getText().toString().trim());
+            intent.putExtra("clickedButton","Computer");
+            startActivity(intent);
+        });
+        binding.twoPlayersButton.setOnClickListener(view -> {
+            Intent intent = new Intent(HomeActivity.this,BoardActivity.class);
+            intent.putExtra("clickedButton","TwoPlayers");
             startActivity(intent);
         });
     }
